@@ -43,6 +43,7 @@ func main() {
 		filename := strings.ReplaceAll(arg, "tsv", "csv")
 		text := strings.Split(string(dat), "\n")
 
+		Info.Println("Writing to: ", filename)
 		err = ioutil.WriteFile(filename, []byte(TsvToCsv(text)), 0644)
 		if err != nil {
 			Error.Fatalln("Could not read the file")
